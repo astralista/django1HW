@@ -31,4 +31,4 @@ DATA = {
 
 
 def receipt_view(request):
-    return render(request, 'index.html')
+    return render(request, 'calculator/index.html')
