@@ -28,3 +28,7 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+
+def receipt_view(request):
+    return render(request, 'index.html')
