@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-{{ DATA.omlet }}
+    {% for x, y in data.items %}
+    <br>{{ x }}: {{ y }}</br>
+    {% endfor %}
 </body>
 </html>

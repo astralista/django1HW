@@ -37,5 +37,7 @@ def receipt_view(request):
 
 
 def omlet_view(request):
-    context = DATA
+    context = {
+        'data': DATA
+    }
     return render(request, 'calculator/omlet.html', context)
