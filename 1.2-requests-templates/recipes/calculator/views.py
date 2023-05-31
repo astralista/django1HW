@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 DATA = {
     'omlet': {
@@ -31,4 +32,10 @@ DATA = {
 
 
 def receipt_view(request):
-    return render(request, 'calculator/index.html')
+    context = DATA
+    return render(request, 'calculator/index.html', context)
+
+
+def omlet_view(request):
+    context = DATA
+    return render(request, 'calculator/omlet.html', context)
