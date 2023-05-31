@@ -5,8 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-    {% for x, y in data.items %}
-    <br>{{ x }}: {{ y }}</br>
-    {% endfor %}
+{% for i in data.keys %}
+    {% if i == omlet %}
+        {% for k, v in i.items %}
+            <br>{{ k }}: {{ v }}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
 </body>
 </html>
