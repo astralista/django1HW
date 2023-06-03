@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 DATA = {
     'omlet': {
@@ -31,13 +30,58 @@ DATA = {
 # }
 
 
-def receipt_view(request):
-    context = DATA
-    return render(request, 'calculator/index.html', context)
-
-
 def omlet_view(request):
+    servings = int(request.GET.get('servings', 1))
+    recipe = {}
+    for r, i in DATA.items():
+        if r == 'omlet':
+            if servings > 1:
+                recipe_serv = {}
+                for k, v in i.items():
+                    recipe_serv[k] = v * servings
+                recipe = recipe_serv
+            else:
+                recipe = i
+
     context = {
-        'data': DATA
+        'recipe': recipe
     }
     return render(request, 'calculator/omlet.html', context)
+
+
+def pasta_view(request):
+    servings = int(request.GET.get('servings', 1))
+    recipe = {}
+    for r, i in DATA.items():
+        if r == 'pasta':
+            if servings > 1:
+                recipe_serv = {}
+                for k, v in i.items():
+                    recipe_serv[k] = v * servings
+                recipe = recipe_serv
+            else:
+                recipe = i
+
+    context = {
+        'recipe': recipe
+    }
+    return render(request, 'calculator/pasta.html', context)
+
+
+def buter_view(request):
+    servings = int(request.GET.get('servings', 1))
+    recipe = {}
+    for r, i in DATA.items():
+        if r == 'buter':
+            if servings > 1:
+                recipe_serv = {}
+                for k, v in i.items():
+                    recipe_serv[k] = v * servings
+                recipe = recipe_serv
+            else:
+                recipe = i
+
+    context = {
+        'recipe': recipe
+    }
+    return render(request, 'calculator/buter.html', context)

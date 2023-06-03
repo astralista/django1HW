@@ -17,11 +17,11 @@ Including another URLconf
 from django.urls import path
 from django.contrib import admin
 
-from calculator.views import receipt_view, omlet_view
+from calculator.views import omlet_view, buter_view, pasta_view
 
 urlpatterns = [
     # здесь зарегистрируйте вашу view-функцию
-    path('admin/', admin.site.urls),
-    path('', receipt_view),
-    path('omlet/', omlet_view)
+    path('omlet/', omlet_view),
+    path('buter/', buter_view),
+    path('pasta/', pasta_view)
 ]
